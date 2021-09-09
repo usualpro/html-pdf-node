@@ -1,0 +1,15 @@
+{
+  "name": "md.poc.html-pdf-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "html-pdf-node": "^1.0.7"
+  }
+}
