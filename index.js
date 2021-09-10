@@ -14,8 +14,7 @@ express()
     .get('/', (req, res) => res.render('pages/index'))
     .post('/generate', (req, res) => {
         const { html } = req.body
-        console.log(html)
-        html_to_pdf.generatePdf(String(html), options).then(pdfBuffer => {
+        html_to_pdf.generatePdf("<h1>qsdqsdqsd</h1>", options).then(pdfBuffer => {
             return pdfBuffer
         }).catch(error => {
             console.log(error);
