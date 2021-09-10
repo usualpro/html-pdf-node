@@ -9,10 +9,11 @@ express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
-    .get('/generate', (req, res) => {
-        const { url } = req.query
-        html_to_pdf.generatePdf(url, options).then(pdfBuffer => {
+    .post('/generate', (req, res) => {
+        console.log(req.query)
+        //const { url } = req.query
+        /*html_to_pdf.generatePdf(url, options).then(pdfBuffer => {
             return pdfBuffer
-        })
+        })*/
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`))
