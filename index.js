@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser');
 const html_to_pdf = require('html-pdf-node');
 const express = require('express')
 const path = require('path')
@@ -5,6 +6,8 @@ const PORT = process.env.PORT || 3000
 const options = { format: 'A4' };
 
 express()
+    .use(bodyParser.json())
+    .use(bodyParser.urlencoded({ extended: true }))
     .use(express.static(path.join(__dirname, 'public')))
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
