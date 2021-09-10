@@ -10,7 +10,7 @@ express()
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
     .post('/generate', (req, res) => {
-        console.log(req.query)
+        console.log(res)
         //const { url } = req.query
         /*html_to_pdf.generatePdf(url, options).then(pdfBuffer => {
             return pdfBuffer
