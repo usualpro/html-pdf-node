@@ -14,8 +14,9 @@ express()
     .get('/', (req, res) => res.render('pages/index'))
     .post('/generate', (req, res) => {
         const { html } = req.body
-        html_to_pdf.generatePdf(html, options).then(pdfBuffer => {
+        console.log(html)
+        /*html_to_pdf.generatePdf(html, options).then(pdfBuffer => {
             return pdfBuffer
-        })
+        })*/
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`))
