@@ -13,8 +13,8 @@ express()
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
     .post('/generate', (req, res) => {
-        const { url } = req.body
-        html_to_pdf.generatePdf(url, options).then(pdfBuffer => {
+        const { html } = req.body
+        html_to_pdf.generatePdf(html, options).then(pdfBuffer => {
             return pdfBuffer
         })
     })
