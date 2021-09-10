@@ -10,9 +10,10 @@ express()
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
     .get('/generate', (req, res) => {
-        const { url } = req.body
-        html_to_pdf.generatePdf(url, options).then(pdfBuffer => {
+        //const { url } = req.body
+        console.log(req);
+        /*html_to_pdf.generatePdf(url, options).then(pdfBuffer => {
             return pdfBuffer
-        })
+        })*/
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`))
