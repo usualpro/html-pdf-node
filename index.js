@@ -1,5 +1,4 @@
 const bodyParser = require('body-parser');
-const puppeteer = require('puppeteer');
 const html_to_pdf = require('html-pdf-node');
 const express = require('express')
 const path = require('path')
@@ -15,9 +14,7 @@ express()
     .get('/', (req, res) => res.render('pages/index'))
     .post('/generate', (req, res) => {
         const { html } = req.body;
-        let file = { content: html };
-        html_to_pdf.generatePdf(file, options).then(pdfBuffer => {
-            return res.send(pdfBuffer)
-        });
+        let file = { content: html }
+        html_to_pdf.generatePdf(file, options).then(pdfBuffer => res.send(pdfBuffer))
     })
     .listen(PORT, () => console.log(`Listening on ${PORT}`))
